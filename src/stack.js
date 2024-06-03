@@ -16,3 +16,8 @@ exports.pop = function () {
 exports.peek = function () {
     return _.last(stack); // stack[0]; Det här är medvetet felaktigt
 }
+
+// Återställer stacken 
+exports.reset = function () {
+    stack = [];
+};
