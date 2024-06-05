@@ -32,3 +32,19 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.accept();
 	});
 });
+
+// Nytt testfall - med medvetet error
+describe('Adding and viewing the top element of the stack', () => {
+    it('should display the pushed element as the top element', async () => {
+        // Lägger till ett element
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys('Apelsin');
+        await alert.accept();
+        
+        // Kontrollerar det översta elementet
+        let topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(topOfStack).toEqual('Banan');  // Felaktigt
+    });
+});
