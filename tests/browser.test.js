@@ -45,6 +45,6 @@ describe('Adding and viewing the top element of the stack', () => {
         
         // Kontrollerar det översta elementet
         let topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
-        expect(topOfStack).toEqual('Banan');  // Felaktigt
+        expect(topOfStack).toEqual('Apelsin');  // Felet åtgärdat
     });
 });
